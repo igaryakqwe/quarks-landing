@@ -1,0 +1,22 @@
+
+.input {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  padding: 1.25rem 4.15rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+  border-radius: 10rem;
+  background-color: var(--grey);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.checked {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}

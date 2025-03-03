@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Button from "./components/common/Button/Button.tsx";
+import Input from "./components/common/Input/Input.tsx";
+import Select from "./components/common/Select/Select.tsx";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedOption, setSelectedOption] = useState("option1");
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption(e.target.value);
+  };
   return (
-    <>
+    <main>
+      <h1>Start</h1>
+      <Button>Start</Button>
+      <Button disabled>Start</Button>
+      <Input placeholder="12313213" />
+      <Input error placeholder="12313213" />
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Select
+          id="select-option1"
+          name="options"
+          value="option1"
+          checked={selectedOption === "option1"}
+          onChange={handleChange}
+        >
+          Option 1
+        </Select>
+
+        <Select
+          id="select-option2"
+          name="options"
+          value="option2"
+          checked={selectedOption === "option2"}
+          onChange={handleChange}
+        >
+          Option 2
+        </Select>
+
+        <Select
+          id="select-option3"
+          name="options"
+          value="option3"
+          checked={selectedOption === "option3"}
+          onChange={handleChange}
+        >
+          Option 3
+        </Select>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;
