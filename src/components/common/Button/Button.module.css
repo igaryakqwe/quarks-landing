@@ -5,6 +5,9 @@
   border-radius: 10rem;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 
   &:disabled {
     background-color: var(--grey_dark);

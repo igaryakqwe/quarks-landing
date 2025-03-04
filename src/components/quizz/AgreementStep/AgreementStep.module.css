@@ -1,0 +1,36 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  place-items: center;
+  gap: 1.6rem;
+}
+
+.question {
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.select {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.variants {
+  display: flex;
+  gap: 1.2rem;
+}

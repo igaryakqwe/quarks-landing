@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100vw - 3.2rem);
+  height: 100%;
+  text-align: center;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.283rem;
+}
+
+.logo {
+  width: 7.4rem;
+  height: 3rem;
+}
+
+.variants-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.variants {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.paragraph {
+  margin-bottom: 0.8rem;
+}
+
+.emoji {
+  width: 1.8rem;
+  height: 2rem;
+}
+
+.variant {
+  width: 8.25rem;
+  height: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  white-space: nowrap;
+}
+
+.message {
+  font-size: 1.4rem;
+  margin-bottom: 1.6rem;
+}

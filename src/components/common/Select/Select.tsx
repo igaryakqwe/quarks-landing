@@ -4,9 +4,15 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement> {
   children: React.ReactNode;
 }
 
-const Select = ({ children, checked, id, ...props }: SelectProps) => {
+const Select = ({
+  children,
+  checked,
+  id,
+  className,
+  ...props
+}: SelectProps) => {
   const checkedClassname = checked ? styles.checked : "";
-  const className = `${styles.label} ${checkedClassname}`;
+  const labelClassname = `${styles.label} ${checkedClassname} ${className}`;
 
   return (
     <>
@@ -17,7 +23,7 @@ const Select = ({ children, checked, id, ...props }: SelectProps) => {
         checked={checked}
         {...props}
       />
-      <label className={className} htmlFor={id}>
+      <label className={labelClassname} htmlFor={id}>
         {children}
       </label>
     </>

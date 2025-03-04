@@ -1,0 +1,27 @@
+.container {
+  position: relative;
+  padding: 0.835rem;
+  display: flex;
+  place-items: center;
+  height: 17.7rem;
+  width: 32.6rem;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  bottom: 0
+}
+
+.middle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  bottom: 0
+
+}
