@@ -14,7 +14,7 @@
 }
 
 .popup {
-  background-color: white;
+  background-color: var(--snow);
   border-radius: 1.2rem;
   padding: 1.6rem;
   width: 90%;

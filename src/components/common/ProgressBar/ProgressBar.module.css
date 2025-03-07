@@ -1,8 +1,7 @@
-/* Progress.module.css */
 .progress-container {
   min-width: 23.1rem;
   height: 0.4rem;
-  background-color: #F5F5F5;
+  background-color: var(--snow);
   border-radius: 1rem;
   overflow: hidden;
 }

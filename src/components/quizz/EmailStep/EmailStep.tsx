@@ -1,6 +1,4 @@
 import { throttle } from "../../../utils/throttle.ts";
-
-// Existing imports
 import styles from "./EmailStep.module.css";
 import BackButton from "../../common/BackButton/BackButton.tsx";
 import ProgressBar from "../../common/ProgressBar/ProgressBar.tsx";
@@ -10,13 +8,15 @@ import Input from "../../common/Input/Input.tsx";
 import Alert from "../../common/Alert/Alert.tsx";
 import Button from "../../common/Button/Button.tsx";
 import { isEmail } from "../../../utils/validation.ts";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const EmailStep = () => {
   const { step, setStep, email, setEmail } = useQuizContext();
   const inputRef = useRef<HTMLInputElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
 
   const isButtonDisabled = !email || !isEmail(email);
+  const showError = !isFocused && Boolean(email) && !isEmail(email);
 
   const handleBack = () => {
     setStep(QuizSteps.Agreement);
@@ -63,6 +63,9 @@ const EmailStep = () => {
             value={email}
             onChange={handleEmailChange}
             onKeyDown={handleKeyDown}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            error={showError}
           />
           <Alert message="This information will be used for the registration process only and won't be visible to other users." />
         </div>
