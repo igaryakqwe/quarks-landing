@@ -47,7 +47,6 @@ const ResultsStep = () => {
 
           const nextProgress = prevProgress + 1;
 
-          // Map progress values to popup steps dynamically
           const progressSteps = [25, 50, 75];
           const nextStep = progressSteps.indexOf(nextProgress);
 
