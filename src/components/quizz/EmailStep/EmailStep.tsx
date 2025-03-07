@@ -1,3 +1,6 @@
+import { throttle } from "../../../utils/throttle.ts";
+
+// Existing imports
 import styles from "./EmailStep.module.css";
 import BackButton from "../../common/BackButton/BackButton.tsx";
 import ProgressBar from "../../common/ProgressBar/ProgressBar.tsx";
@@ -19,12 +22,21 @@ const EmailStep = () => {
     setStep(QuizSteps.Agreement);
   };
 
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
+  const handleEmailChange = throttle(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setEmail(event.target.value);
+    },
+    300
+  );
 
   const handleContinue = () => {
     setStep(QuizSteps.Results);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter" && !isButtonDisabled) {
+      handleContinue();
+    }
   };
 
   useEffect(() => {
@@ -50,6 +62,7 @@ const EmailStep = () => {
             placeholder="Your email"
             value={email}
             onChange={handleEmailChange}
+            onKeyDown={handleKeyDown}
           />
           <Alert message="This information will be used for the registration process only and won't be visible to other users." />
         </div>
