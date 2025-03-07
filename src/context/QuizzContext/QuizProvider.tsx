@@ -8,6 +8,11 @@ const QuizContextProvider = ({ children }: PropsWithChildren) => {
   const [lookingFor, setLookingFor] = useState<Gender | null>(null);
   const [isAgree, setIsAgree] = useState<Agreement | null>(null);
   const [email, setEmail] = useState<string>("");
+  const [partnerGoals, setPartnerGoals] = useState<string | null>(null);
+  const [emotionalConnection, setEmotionalConnection] = useState<string | null>(
+    null
+  );
+  const [effortCompromise, setEffortCompromise] = useState<string | null>(null);
 
   return (
     <QuizContext.Provider
@@ -22,6 +27,12 @@ const QuizContextProvider = ({ children }: PropsWithChildren) => {
         setIsAgree,
         email,
         setEmail,
+        partnerGoals,
+        setPartnerGoals,
+        emotionalConnection,
+        setEmotionalConnection,
+        effortCompromise,
+        setEffortCompromise,
       }}
     >
       {children}

@@ -24,7 +24,7 @@ const EmailStep = () => {
   };
 
   const handleContinue = () => {
-    setStep(QuizSteps.SelectGender);
+    setStep(QuizSteps.Results);
   };
 
   useEffect(() => {

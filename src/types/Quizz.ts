@@ -2,6 +2,7 @@ export enum QuizSteps {
   SelectGender,
   Agreement,
   Email,
+  Results,
 }
 
 export type Gender = "man" | "woman";
@@ -19,4 +20,10 @@ export interface QuizContextProps {
   setIsAgree: (isAgree: Agreement) => void;
   email: string;
   setEmail: (email: string) => void;
+  partnerGoals: string | null;
+  setPartnerGoals: (partnerGoals: string) => void;
+  emotionalConnection: string | null;
+  setEmotionalConnection: (emotionalConnection: string) => void;
+  effortCompromise: string | null;
+  setEffortCompromise: (effortCompromise: string) => void;
 }
